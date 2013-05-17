@@ -1,0 +1,105 @@
+\section{Introducción}
+
+Aunque en la mayoría de casos estudiados se desprecia
+la fuerza de resistencia del aire, pero a grandes velocidades
+su intervención en el movimiento de un objeto es importante tomarla 
+en cuenta.
+
+La ecuación en caída libre de un objeto con resistencia es:
+
+\begin{equation}
+    F = W + f = -mg + rv^2
+    \label{int_caidalibre}
+\end{equation}
+
+donde $m$ es la masa del objeto cayendo, $g$ la aceleración de la
+gravedad, $r$ el coeficiente de fricción del fluido sobre el que se esta
+cayendo y $v$ la velocidad del objeto.
+
+En caída libre el objeto cayendo alcanza la llamada \textit{velocidad terminal}
+debido a la fuerza de resistencia del aire.
+
+Como es fácil ver, el cono alcanza esta velocidad $v_t$ cuando $a$ es cero, es decir
+\[
+    -mg + rv^2 = 0,
+\]
+desarrollando:
+\[
+    mg = rv^2_t
+\]
+
+$r$ se puede calcular con la siguiente expresión:
+
+\begin{equation}
+    r = \frac{\rho A C_D}{2}
+    \label{int_calcoef}
+\end{equation}
+
+donde $\rho$ es la densidad del aire, $A$ es el área que tiene
+contacto con el fluido y $C_D$ es un coeficiente de arrastre
+que depende de la forma del objeto cayendo.
+
+Despejando a $C_D$ obtenemos
+
+\begin{equation}
+    C_D = \frac{2r}{\rho A}
+    \label{int_valorDeR}
+\end{equation}
+
+Que nos permitirá conocer este último coeficiente después de determinar
+$r$.
+
+Finalmente para concer el área de la superficie de contacto 
+de los conos desarrollamos lo siguiente.
+
+\begin{equation}
+    A_c = \pi R g
+    \label{AreaCono}
+\end{equation}
+
+donde $A_c$ es el área del cono, $R$ el radio del círculo.
+
+También sabemos que:
+
+\begin{equation}
+    P = 2 \pi r
+    \label{Perimetro}
+\end{equation}
+
+donde $P$ es el perímetro del cono y $r$
+es el radio del círculo que formará al cono.
+
+Otra expresión util es:
+
+\begin{equation}
+    S = r \theta
+    \label{Arco}
+\end{equation}
+
+con $S$ el arco del círculo y $\theta$ el ángulo
+de la parte que se mutilo al círculo base.
+
+\subsection{Metodo de medio paso}
+
+El método de medio paso necesita de la poscición, la velocidad
+promedio de las dos velocidades al principio y al final del 
+intervalo de tiempo, esto es:
+
+$v_{k+1} = v_k + \Delta t a_k$ y $y_{k+1} = y_k + \Delta \frac{v_{k+1}+v_k}{2}$
+
+Uniendo ambas ecuaciones obtenemos que
+
+$y_k = y_k + \Delta t v_k + \frac{1}{2}a_k \Delta t^2$
+
+Nosotros utilizamos una variación del método anterior, en la
+cual se comienza con un intervalo de tiempo $\Delta t/2$ en
+lugar del $\Delta t$. De esta manera se obtiene
+
+$v_{k+1/2} = v_k + \frac{\Delta t}{2}a_k$
+
+A partir de este cálculo, el método sigue aplicándose
+en intervalos de $\Delta t$. Así, la iteración continúa para
+$k \neq 0$, como
+$v_{k+1/2} = v_{k-1/2} + \Delta ta(v_k)$
+$y_{k+i} = y_k + \Delta t v_{k+1/2}$
+$v_(v_{k+1/2})$

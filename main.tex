@@ -1,0 +1,64 @@
+%        File: main.tex
+%     Created: mié may 08 12:00  2013 C
+% Last Change: mié may 08 12:00  2013 C
+%
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor, colortbl}
+\definecolor{azulito}{rgb}{0.8,0.8,0.8}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage[total={18cm,24cm},top=3cm, left=2cm]{geometry}
+
+\setlength{\parskip}{\baselineskip}
+
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+\newenvironment{Tabla}
+{\par\medskip\noindent\minipage{\linewidth}}{\endminipage\par\medskip}
+\pagestyle{fancy}
+\fancyhead[CL]{David Amaro Alcal\'{a}}
+\fancyhead[CR]{\textit{Actividad 7.2}}
+\fancyhead[C]{Caída de conos}
+
+\date{13 de mayo de 2013}
+\title{Actividad 7.2\\
+    Caída de conos\\
+}
+\author{Universidad Nacional Autónoma de México \\
+    Facultad de Ciencias \\
+    Amaro Alcalá David \\
+    Equipo 4 \\
+    Prof. Alejandro González y Hernández\\
+    Ay. Ismael Ponce Rosas\\
+    Laboratorio 2\\
+    }
+
+\begin{document}
+        \input{tit}
+    \begin{multicols}{2}
+        \input{abs}
+        \input{int}
+        \input{obj}
+        \input{des}
+        \input{hip}
+    \end{multicols}
+        \input{tab}
+        \input{gra}
+        \input{res}
+    \begin{multicols}{2}
+        \input{anr}
+        \input{con}
+        \input{bib}
+    \end{multicols}
+\end{document}
